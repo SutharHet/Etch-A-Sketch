@@ -12,6 +12,26 @@ clearBtn.textContent = 'Clear';
 clearBtn.style.width = '100px';
 clearBtn.style.height = '40px';
 nav.appendChild(clearBtn);
+
+const defaultBtn = document.createElement('button');
+defaultBtn.textContent = 'Default Color';
+defaultBtn.style.width = '100px';
+defaultBtn.style.height = '40px';
+nav.appendChild(defaultBtn);
+
+const colorBtn = document.createElement('button');
+colorBtn.textContent = 'select';
+colorBtn.style.width = '100px';
+colorBtn.style.height = '40px';
+nav.appendChild(colorBtn);
+
+const colorSelector = document.createElement('input');
+colorSelector.type = 'color';
+colorSelector.style.width = '50px';
+colorSelector.style.height = '40px';
+nav.appendChild(colorSelector);
+
+
 /*
 const pixleBtn = document.createElement('button');
 pixleBtn.textContent = 'Change pixle size';
@@ -34,22 +54,31 @@ containerDiv.style.border = '3px solid black';
 body.appendChild(containerDiv);
 
 
-
+let fillColor = 'Black';
 pixleNo *= pixleNo;
 for(let i = 0; i < pixleNo; i++) {
     const pixleDiv = document.createElement('div');
-    pixleDiv.style.backgroundColor = 'gray';
     pixleDiv.className = 'pixle';
     //pixleDiv.style.width = '50px';
     //pixleDiv.style.height = '50px';
     //pixleDiv.style.border = '1px solid white';
     containerDiv.appendChild(pixleDiv);
     
-    pixleDiv.addEventListener("mouseover", () => {
-        pixleDiv.style.backgroundColor = 'Black';
+    defaultBtn.addEventListener('click', () => {
+        fillColor = 'Black';
     });
+    
+    
+    colorBtn.addEventListener('click', () => {
+            fillColor = colorSelector.value;
+    });
+
+    pixleDiv.addEventListener("mouseover", () => {
+        pixleDiv.style.backgroundColor = fillColor;
+    });
+
     clearBtn.addEventListener('click', () => {
-        pixleDiv.style.backgroundColor = 'gray';
+        pixleDiv.style.backgroundColor = 'white';
     });
 }
 
