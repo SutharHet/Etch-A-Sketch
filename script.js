@@ -77,10 +77,12 @@ for(let i = 0; i < pixleNo; i++) {
     pixleDiv.addEventListener('mouseover', () => {
         pixleDiv.style.backgroundColor = fillColor;
     });
-    
-    pixleDiv.addEventListener('touchmove', () => {
-        pixleDiv.style.backgroundColor = fillColor;
+    pixleDiv.addEventListener('touchstart', () => {
+        pixleDiv.addEventListener('touchmove', () => {
+            pixleDiv.style.backgroundColor = fillColor;
+        });
     });
+    
 
     clearBtn.addEventListener('click', () => {
         pixleDiv.style.backgroundColor = 'white';
