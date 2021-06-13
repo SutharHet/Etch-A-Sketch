@@ -3,8 +3,8 @@ const body = document.querySelector('body');
 let pixleNo = prompt('How many pixle');
 if(pixleNo>100) alert('Pixle size is greater then 100');
 const nav = document.createElement('div');
-nav.style.width = '500px';
-nav.style.height = '50px';
+nav.style.width = '37%';
+nav.style.height = '10%';
 nav.style.display = 'flex';
 nav.style.justifyContent = 'space-between';
 nav.style.alignContent = 'center';
@@ -48,8 +48,8 @@ pixleBtn.addEventListener('click', () => {
 */
 const containerDiv = document.createElement('div');
 containerDiv.className = "container";
-containerDiv.style.width = '500px';
-containerDiv.style.height = '500px';
+containerDiv.style.width = '37%';
+containerDiv.style.height = '70%';
 containerDiv.style.display = 'grid';
 containerDiv.style.gridTemplateRows = 'repeat('+pixleNo +', 1fr)';
 containerDiv.style.gridTemplateColumns = 'repeat('+pixleNo+', 1fr)';
