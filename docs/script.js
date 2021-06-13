@@ -3,8 +3,12 @@ const body = document.querySelector('body');
 let pixleNo = prompt('How many pixle');
 if(pixleNo>100) alert('Pixle size is greater then 100');
 const nav = document.createElement('div');
-nav.style.width = '100%';
+nav.style.width = '500px';
 nav.style.height = '50px';
+nav.style.display = 'flex';
+nav.style.justifyContent = 'space-between';
+nav.style.alignContent = 'center';
+nav.style.margin = '10px auto'; 
 body.appendChild(nav);
 
 const clearBtn = document.createElement('button');
@@ -20,17 +24,17 @@ defaultBtn.style.height = '40px';
 nav.appendChild(defaultBtn);
 
 const colorBtn = document.createElement('button');
-colorBtn.textContent = 'select';
+colorBtn.textContent = 'select : ';
 colorBtn.style.width = '100px';
 colorBtn.style.height = '40px';
 nav.appendChild(colorBtn);
 
 const colorSelector = document.createElement('input');
 colorSelector.type = 'color';
-colorSelector.style.width = '50px';
-colorSelector.style.height = '40px';
-nav.appendChild(colorSelector);
-
+colorSelector.style.width = '20px';
+colorSelector.style.height = '20px';
+colorSelector.style.borderRadius = '100%';
+colorBtn.appendChild(colorSelector);
 
 /*
 const pixleBtn = document.createElement('button');
@@ -50,7 +54,7 @@ containerDiv.style.display = 'grid';
 containerDiv.style.gridTemplateRows = 'repeat('+pixleNo +', 1fr)';
 containerDiv.style.gridTemplateColumns = 'repeat('+pixleNo+', 1fr)';
 containerDiv.style.border = '3px solid black';
-//containerDiv.style.backgroundColor = 'gray';
+containerDiv.style.margin = '10px auto';
 body.appendChild(containerDiv);
 
 
@@ -66,8 +70,7 @@ for(let i = 0; i < pixleNo; i++) {
     
     defaultBtn.addEventListener('click', () => {
         fillColor = 'Black';
-    });
-    
+    });    
     
     colorBtn.addEventListener('click', () => {
             fillColor = colorSelector.value;
