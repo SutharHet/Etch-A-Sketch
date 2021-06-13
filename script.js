@@ -63,8 +63,6 @@ pixleNo *= pixleNo;
 for(let i = 0; i < pixleNo; i++) {
     const pixleDiv = document.createElement('div');
     pixleDiv.className = 'pixle';
-    //pixleDiv.style.width = '50px';
-    //pixleDiv.style.height = '50px';
     //pixleDiv.style.border = '1px solid white';
     containerDiv.appendChild(pixleDiv);
     
@@ -76,7 +74,11 @@ for(let i = 0; i < pixleNo; i++) {
             fillColor = colorSelector.value;
     });
 
-    pixleDiv.addEventListener("mouseover", () => {
+    pixleDiv.addEventListener('mouseover', () => {
+        pixleDiv.style.backgroundColor = fillColor;
+    });
+    
+    pixleDiv.addEventListener('touchmove', () => {
         pixleDiv.style.backgroundColor = fillColor;
     });
 
